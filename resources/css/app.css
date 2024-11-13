@@ -1,0 +1,68 @@
+Background Color
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #f0f4f8; /* لون فاتح للخلفية */
+}
+
+/* Container Styling */
+.container {
+    max-width: 80%; /* تقليل العرض للحصول على شكل مركز */
+    padding: 20px;
+    background-color: #ffffff; /* لون خلفية أبيض لصندوق المحتوى */
+    box-shadow: 0 4px 8px rgba(246, 243, 243, 0.1); /* إضافة ظل خفيف */
+    border-radius: 10px; /* حواف دائرية */
+    /* @apply mx-auto my-5; وضع الحاوية في الوسط */
+}
+
+/* Table Styling */
+.table {
+    background-color: #ffffff; /* خلفية بيضاء للجدول */
+    color: #ede9e9; /* نص داكن */
+}
+
+.table-dark {
+    background-color: #c0cede; /* أزرق غامق للرأس */
+    color: #ffffff; /* نص أبيض */
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff; /* لون أزرق للزر الأساسي */
+    color: #ffffff; /* نص أبيض */
+    border: none;
+    /* @apply py-2 px-4 rounded-md shadow; */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* لون أصفر */
+    color: #ffffff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* لون أحمر */
+    color: #ffffff;
+    border: none;
+}
+
+/* Form Control */
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Alert */
+.alert {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d1e7dd; /* أخضر فاتح للتنبيه */
+    color: #0f5132; /* نص أخضر غامق */
+    border: 1px solid #badbcc;
+}
