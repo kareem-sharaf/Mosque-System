@@ -26,7 +26,7 @@
     <body class="font-sans antialiased">
         <div class="bg-gray-100 dark:bg-gray-900">
             -- <!-- Navigation Bar -->
-            {{-- @include('layouts.navigation') --}}
+            @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)
@@ -47,6 +47,8 @@
 
     <!-- JavaScript Libraries (Bootstrap) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-
+//456456
 namespace App\Http\Controllers;
 
 
@@ -68,7 +68,9 @@ class ActionsController extends Controller
 
         $data = $request->validated();
         $actions = $data['actions'];
-
+        if(!$actions) {
+            return redirect()->route('reports.index')->with('message', 'Actions added successfully!');
+        }
         foreach ($actions as $student_id => $actionData) {
             $actionData['user_id'] = $user_id;
             $actionData['student_id'] = $student_id;
@@ -79,7 +81,7 @@ class ActionsController extends Controller
             $action = Action::create($actionData);
 
             $student = Student::find($student_id);
-            $student->total_points += $points; 
+            $student->total_points += $points;
             $student->save();
         }
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@include('layouts.navigation')
+@section('content')
 
 <div class="container">
     <h2 class="text-center mb-4">إضافة بيانات الطلاب</h2>
@@ -51,3 +51,4 @@
         <button type="submit" class="btn btn-primary">إضافة البيانات</button>
     </form>
 </div>
+@endsection

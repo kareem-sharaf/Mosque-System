@@ -1,68 +1,75 @@
 Background Color
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    background-color: #f0f4f8; /* لون فاتح للخلفية */
-}
+
 
 /* Container Styling */
 .container {
     max-width: 80%; /* تقليل العرض للحصول على شكل مركز */
-    padding: 20px;
-    background-color: #ffffff; /* لون خلفية أبيض لصندوق المحتوى */
-    box-shadow: 0 4px 8px rgba(246, 243, 243, 0.1); /* إضافة ظل خفيف */
-    border-radius: 10px; /* حواف دائرية */
-    /* @apply mx-auto my-5; وضع الحاوية في الوسط */
+    padding: 200px;
 }
 
 /* Table Styling */
 .table {
-    background-color: #ffffff; /* خلفية بيضاء للجدول */
-    color: #ede9e9; /* نص داكن */
+    background-color: #4cb2ed; /* خلفية بيضاء للجدول */
 }
 
-.table-dark {
-    background-color: #c0cede; /* أزرق غامق للرأس */
-    color: #ffffff; /* نص أبيض */
-}
+
 
 /* Button Styling */
 .btn-primary {
-    background-color: #007bff; /* لون أزرق للزر الأساسي */
-    color: #ffffff; /* نص أبيض */
-    border: none;
-    /* @apply py-2 px-4 rounded-md shadow; */
+    background-color: #8ba6c4; /* لون أزرق للزر الأساسي */
+    color: #010101; /* نص أبيض */
 }
 
 .btn-warning {
     background-color: #ffc107; /* لون أصفر */
-    color: #ffffff;
+    color: #0b0a0a;
     border: none;
 }
 
 .btn-danger {
     background-color: #dc3545; /* لون أحمر */
-    color: #ffffff;
+    color: #faf8f8;
     border: none;
 }
 
-/* Form Control */
-.form-control {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-}
 
 /* Alert */
 .alert {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #d1e7dd; /* أخضر فاتح للتنبيه */
+    background-color: #b9e8d3; /* أخضر فاتح للتنبيه */
     color: #0f5132; /* نص أخضر غامق */
     border: 1px solid #badbcc;
+}
+  /* Navbar Styling */
+.nav {
+    background-color: #519ff3; /* لون الخلفية للشريط العلوي */
+    color: #ffffff; /* لون النص */
+    padding: 0 20rem; /* مسافات داخلية */
+    display: flex;
+    justify-content: space-between; /* توزيع العناصر بين اليمين واليسار */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    height: 4rem; /* ارتفاع الشريط */
+    border-bottom: 1px solid #0a0a0a; /* خط سفلي */
+}
+
+.nav a {
+    color: #060606; /* لون النص */
+    text-decoration: none; /* إزالة الخط السفلي */
+    padding: 0.5rem 1rem; /* مسافات حول الروابط */
+    transition: color 0.3s; /* تأثير عند التمرير */
+}
+
+.nav a:hover {
+    color: #ffdd57; /* تغيير لون النص عند التمرير */
+}
+.space-x-nav-item-spacing {
+    margin-left: 1rem; /* أو استخدم قيمة أكبر مثل 2rem لزيادة المسافة */
+    margin-right: 1rem; /* يمكنك تغييرها كما تشاء */
+}
+nav a:hover {
+    color: #ffdd57; /* لون نص مختلف */
+    transform: scale(1.05); /* تكبير بسيط */
+    transition: all 0.3s ease;
 }

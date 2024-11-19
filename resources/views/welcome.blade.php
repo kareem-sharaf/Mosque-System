@@ -1,65 +1,70 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
 <head>
     <!-- Metadata -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KarmoVsky</title>
 
-    <!-- Styles and Scripts -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @endif
+
 
     <!-- Additional Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <!-- Tailwind CSS (Direct Link) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="font-sans antialiased bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
 
-
-
-
-
-    <!-- Buttons Section -->
-    <div
-        class="relative z-10 flex flex-col items-center px-8 py-16 text-center bg-white shadow-xl rounded-2xl dark:bg-gray-800 dark:text-gray-200">
-
-        <h1 class="text-5xl font-extrabold text-[#8B0000] mb-20">
+    <!-- Header Section -->
+    <header class="bg-[#8B0000] text-white py-6 shadow-md">
+        <h1 class="text-center text-4xl font-extrabold">
             جامع عمر الفاروق
         </h1>
+    </header>
 
-        <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-10">
-            @if (Route::has('login'))
-                @auth
-                    <!-- Home Button -->
-                    <a href="{{ route('students.index') }}"
-                        class="rounded-full px-12 py-6 text-white bg-[#8B0000] hover:bg-[#A52A2A] font-semibold text-lg shadow-lg transition-transform transform hover:scale-105">
-                        Home
-                    </a>
-                @else
-                    <!-- Login Button -->
-                    <a href="{{ route('login') }}" <x-primary-button class="ms-3">
-                        {{ __('Log in') }}
-                        </x-primary-button>
-                    </a>
+    <!-- Main Content -->
+    <main class="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="relative z-10 px-8 py-16 text-center bg-white shadow-xl rounded-2xl dark:bg-gray-800">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">
+                أهلاً وسهلاً في منصة جامع عمر الفاروق
+            </h2>
 
-                    <!-- Register Button -->
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" <x-primary-button class="ms-3">
-                            {{ __('Register') }}
-                            </x-primary-button>
+            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+                @if (Route::has('login'))
+                    @auth
+                        <!-- Home Button -->
+                        <a href="{{ route('students.index') }}"
+                            class="rounded-full px-12 py-4 text-white bg-[#8B0000] hover:bg-[#A52A2A] font-semibold text-lg shadow-md transition-transform transform hover:scale-105">
+                            الصفحة الرئيسية
                         </a>
-                    @endif
-                @endauth
-            @endif
+                    @else
+                        <!-- Login Button -->
+                        <a href="{{ route('login') }}"
+                            class="rounded-full px-12 py-4 text-white bg-[#8B0000] hover:bg-[#A52A2A] font-semibold text-lg shadow-md transition-transform transform hover:scale-105">
+                            تسجيل الدخول
+                        </a>
+
+                        <!-- Register Button -->
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                                class="rounded-full px-12 py-4 text-white bg-gray-700 hover:bg-gray-600 font-semibold text-lg shadow-md transition-transform transform hover:scale-105">
+                                انشاء حساب
+                            </a>
+                        @endif
+                    @endauth
+                @endif
+            </div>
         </div>
-    </div>
+    </main>
 
-
-    </div>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-200 text-center py-4">
+        <p>© {{ date('Y') }} جامع عمر الفاروق. جميع الحقوق محفوظة.</p>
+    </footer>
 </body>
 
 </html>

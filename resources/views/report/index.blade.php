@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-{{-- @section('content') --}}
-@include('layouts.navigation')
+@section('content')
 
 <div class="container">
-    <h1>جميع السجلات</h1>
+    <h1>جميع التقارير</h1>
 
     <table class="table">
         <thead>
@@ -38,4 +37,4 @@
         </tbody>
     </table>
 </div>
-{{-- @endsection --}}
+@endsection

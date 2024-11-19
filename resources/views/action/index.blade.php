@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
-<!-- Navigation Bar -->
-@include('layouts.navigation')
+@section('content')
 
 <div class="container">
     <h2 class="text-center mb-4">نشاطات الطلاب</h2>
@@ -43,3 +41,4 @@
 
 
 </div>
+@endsection
