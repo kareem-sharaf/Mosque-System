@@ -5,19 +5,16 @@
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KarmoVsky</title>
+    <title>جامع الفاروق</title>
 
 
 
-    <!-- Additional Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Tailwind CSS (Direct Link) -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-sans antialiased bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<body >
 
     <!-- Header Section -->
     <header class="bg-[#8B0000] text-white py-6 shadow-md">

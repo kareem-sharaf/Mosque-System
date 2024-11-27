@@ -20,7 +20,7 @@
                             <!-- حقل الهاتف -->
                             <div class="form-group">
                                 <label for="phone">رقم مبايل أو هاتف</label>
-                                <input type="text" name="phone" id="phone" class="form-control" value="09--------">
+                                <input type="text" name="phone" id="phone" class="form-control" value="0000000000">
                                 @if ($errors->has('phone'))
                                     <div class="text-danger">{{ $errors->first('phone') }}</div>
                                 @endif

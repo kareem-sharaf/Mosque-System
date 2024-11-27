@@ -27,6 +27,8 @@ class ActionRequest extends FormRequest
             'actions.*.hadiths' => 'integer|min:0',
             'actions.*.clothes' => 'boolean',
             'actions.*.noisy' => 'boolean',
+            'actions.*.gift' => 'integer|min:0',
+
         ];
     }
 
@@ -36,7 +38,7 @@ class ActionRequest extends FormRequest
     protected function prepareForValidation()
     {
         $actions = $this->input('actions', []);
-
+        
         foreach ($actions as $student_id => $actionData) {
             $actions[$student_id] = array_merge([
                 'exist' => false,
@@ -44,6 +46,8 @@ class ActionRequest extends FormRequest
                 'hadiths' => 0,
                 'clothes' => false,
                 'noisy' => false,
+                'gift' => 0,
+
             ], $actionData);
         }
 

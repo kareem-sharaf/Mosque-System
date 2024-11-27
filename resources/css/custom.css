@@ -1,0 +1,15 @@
+body {
+    background-image: url('/storage/app/public/images/789.jpg');
+    background-size: 100%; /* حجم الخلفية، يمكن تعديله */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* إضافة طبقة شفافية */
+ /*   background-color: rgba(255, 255, 255, 0.5); /* خلفية شفافة فوق الصورة */
+  /*  background-blend-mode: overlay; /* دمج الصورة والخلفية */
+}
+
+.bg-gray-100,
+.dark\:bg-gray-900 {
+    background: none !important;
+}

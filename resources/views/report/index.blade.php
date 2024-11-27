@@ -1,40 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container mb-4 white-text">
+        <h1 class="page-title">جميع التقارير</h1>
 
-<div class="container">
-    <h1>جميع التقارير</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-
-                <th>تقرير اليوم</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($reports as $report)
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>{{ $report->id }}</td>
-                    <td>{{ $report->date }}</td>
-                    <td>
-                        <a href="{{ route('actions.index', ['report_id' => $report->id]) }}"
-                            class="btn btn-info btn-sm">عرض </a>
+                    <th>#</th>
 
-
-
-                        {{-- <a href="{{ route('report.edit', $report->id) }}" class="btn btn-warning btn-sm">تعديل</a> --}}
-                        {{-- <form action="{{ route('report.delete', $report->id) }}" method="POST"
-                            style="display:inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">حذف</button>
-                        </form> --}}
-                    </td>
+                    <th>تقرير اليوم</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach ($reports as $report)
+                    <tr>
+                        <td>{{ $report->id }}</td>
+                        <td>{{ $report->date }}</td>
+                        <td>
+                            <a href="{{ route('actions.index', ['report_id' => $report->id]) }}"
+                                class="btn btn-view btn-sm">عرض </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection

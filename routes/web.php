@@ -40,7 +40,7 @@ Route::group(['prefix' => 'students'], function () {
         Route::middleware('auth')->group(function () {
             Route::get('/create', [StudentController::class, 'create'])->name('students.create');
             Route::post('/', [StudentController::class, 'store'])->name('students.store');
-            Route::get('/', [StudentController::class, 'index'])->name('students.index');  
+            Route::get('/', [StudentController::class, 'index'])->name('students.index');
             Route::delete('/delete/{student_id}', [StudentController::class, 'destroy'])->name('student.delete');
 
             Route::get('/edit/{student_id}', [StudentController::class, 'edit'])->name('student.edit');
@@ -80,13 +80,10 @@ Route::group(['prefix' => 'actions'], function () {
     Route::controller(ActionsController::class)->group(function () {
         Route::middleware('auth')->group(function () {
             Route::get('/{report_id}', [ActionsController::class, 'index'])->name('actions.index');
-            Route::delete('/delete/{action_id}', [ActionsController::class, 'destroy'])->name('action.delete');
-
             Route::get('/create/{report_id}', [ActionsController::class, 'create'])->name('action.create');
             Route::post('/store/{report_id}', [ActionsController::class, 'store'])->name('action.store');
-
-            Route::get('/edit/{action_id}', [ActionsController::class, 'edit'])->name('action.edit');
-            Route::POST('/update/{action_id}', [ActionsController::class, 'update'])->name('action.update');
+            Route::put('/update/{action_id}', [ActionsController::class, 'update'])->name('action.update');
+            Route::get('/edit/{report_id}', [ActionsController::class, 'edit'])->name('action.edit');
         });
     });
 });

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->integer('hadiths')->default(0);
             $table->boolean('clothes')->default(false);
             $table->boolean('noisy')->default(false);
+            $table->integer('gift')->default(0);
 
 
             $table->timestamps();

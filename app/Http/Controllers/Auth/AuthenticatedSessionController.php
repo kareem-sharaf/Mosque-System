@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -23,13 +24,27 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
+
+
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        $credentials = $request->only('name', 'password');
 
-        $request->session()->regenerate();
-        return redirect(route('students.index', absolute: false));
+        $user = User::where('name', $credentials['name'])->first();
+
+        if ($user && $user->password === $credentials['password']) {
+            Auth::login($user);
+
+            $request->session()->regenerate();
+
+            return redirect()->intended(route('students.index', absolute: false));
+        }
+
+        return back()->withErrors([
+            'name' => 'The provided credentials are incorrect.',
+        ])->onlyInput('name');
     }
+
 
     /**
      * Destroy an authenticated session.

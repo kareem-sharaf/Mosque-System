@@ -1,0 +1,35 @@
+
+
+    /* Button Styling */
+    .btn-primary {
+        background-color: #A52A2A; /* بني مائل للأحمر */
+        color: #FFFFFF; /* نص أبيض */
+    }
+
+    .btn-warning {
+        background-color: #FFD700; /* لون ذهبي */
+        color: #650000; /* نص أحمر داكن */
+        border: none;
+    }
+
+    .btn-danger {
+        background-color: #DC143C; /* لون أحمر كرزي */
+        color: #FFFFFF; /* نص أبيض */
+        border: none;
+    }
+
+    /* Alert */
+    .alert {
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #FFCCCB; /* لون وردي فاتح */
+        color: #8B0000; /* نص أحمر داكن */
+        border: 1px solid #8B0000; /* حدود أحمر داكن */
+    }
+
+
+    .space-x-nav-item-spacing {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }

@@ -10,9 +10,12 @@ class ReportsSeeder extends Seeder
 {
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        // تاريخ البداية (23/11/2024)
+        $startDate = Carbon::create(2024, 11, 23);
+
+        for ($i = 0; $i < 20; $i++) { // تكرار 20 مرات
             DB::table('reports')->insert([
-                'date' => Carbon::now()->subDays($i), 
+                'date' => $startDate->copy()->addWeeks($i), // زيادة أسبوع لكل إدخال
             ]);
         }
     }

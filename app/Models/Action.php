@@ -16,6 +16,7 @@ class Action extends Model
         'hadiths',
         'clothes',
         'noisy',
+        'gift'
 
     ];
 
@@ -24,12 +25,15 @@ class Action extends Model
     {
         return $this->belongsTo(User::class);
     }
+
     public function student()
     {
         return $this->belongsTo(Student::class);
     }
+
     public function report()
     {
         return $this->belongsTo(Report::class);
     }
+    
 }

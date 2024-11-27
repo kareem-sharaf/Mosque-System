@@ -9,14 +9,7 @@ export default {
         "./resources/views/**/*.blade.php",
     ],
 
-    theme: {
-        extend: {
-            colors: {
-                navbarBg: "#6cab5e", // تحديد اللون الخلفي للشريط العلوي
-                navbarText: "#ffffff", // تحديد اللون النصي
-            },
-        },
-    },
+    
 
     plugins: [forms],
 };

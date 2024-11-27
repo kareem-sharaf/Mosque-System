@@ -1,75 +1,89 @@
-Background Color
-
-
 /* Container Styling */
 .container {
-    max-width: 80%; /* تقليل العرض للحصول على شكل مركز */
+    max-width: 80%;
     padding: 200px;
+    /* background-color: #877373; لون خلفية أفتح قليلاً من الأحمر الداكن */
+    color: #050505; /* نص أبيض */
 }
 
 /* Table Styling */
 .table {
-    background-color: #4cb2ed; /* خلفية بيضاء للجدول */
+    background-color: #fcfbfa; /* نفس لون النافبار */
+    color: #070707; /* نص أبيض */
+    border: 1px solid #d14949; /* حدود بلون أفتح */
 }
-
-
-
+.table tbody tr td {
+    color: #070707; /* اللون الأبيض للنص */
+}
+.white-text {
+    color: #0d0d0d;
+}
+.page-title {
+    color: #0a0a0a; /* لون النص أبيض */
+}
 /* Button Styling */
 .btn-primary {
-    background-color: #8ba6c4; /* لون أزرق للزر الأساسي */
-    color: #010101; /* نص أبيض */
+    background-color: #b33b3b; /* لون أحمر متوسط */
+    color: #ffffff; /* نص أبيض */
+    border: none;
 }
 
 .btn-warning {
-    background-color: #ffc107; /* لون أصفر */
-    color: #0b0a0a;
+    background-color: #f5b700; /* لون ذهبي */
+    color: #ffffff; /* نص أبيض */
     border: none;
 }
 
 .btn-danger {
-    background-color: #dc3545; /* لون أحمر */
-    color: #faf8f8;
+    background-color: #8c0303; /* نفس لون النافبار */
+    color: #ffffff; /* نص أبيض */
     border: none;
 }
+.btn-view {
+    background-color: #8c0303; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا دائرية */
+    padding: 5px 10px; /* مسافات داخلية */
+    font-weight: bold; /* جعل النص عريضًا */
+    transition: all 0.3s ease; /* تأثير الانتقال */
+}
 
+.btn-view:hover {
+    background-color: #7a7676; /* لون الخلفية عند التمرير */
+    color: #f8f9fa; /* لون النص عند التمرير */
+    transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
+}
 
 /* Alert */
 .alert {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #b9e8d3; /* أخضر فاتح للتنبيه */
-    color: #0f5132; /* نص أخضر غامق */
-    border: 1px solid #badbcc;
+    background-color: #f5b700; /* خلفية ذهبية */
+    color: #8c0303; /* نص أحمر داكن */
+    border: 1px solid #b33b3b; /* حدود بلون أحمر متوسط */
 }
-  /* Navbar Styling */
+
+/* Navbar Styling */
 .nav {
-    background-color: #519ff3; /* لون الخلفية للشريط العلوي */
-    color: #ffffff; /* لون النص */
-    padding: 0 20rem; /* مسافات داخلية */
+    background-color: #8c0303; /* لون خلفية أحمر داكن */
+    color: #ffffff; /* نص أبيض */
+    padding: 0 20rem;
     display: flex;
-    justify-content: space-between; /* توزيع العناصر بين اليمين واليسار */
-    align-items: center; /* محاذاة العناصر عموديًا */
-    height: 4rem; /* ارتفاع الشريط */
-    border-bottom: 1px solid #0a0a0a; /* خط سفلي */
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    border-bottom: 1px solid #6e0202; /* حدود متناسقة أغمق */
 }
 
 .nav a {
-    color: #060606; /* لون النص */
-    text-decoration: none; /* إزالة الخط السفلي */
-    padding: 0.5rem 1rem; /* مسافات حول الروابط */
-    transition: color 0.3s; /* تأثير عند التمرير */
+    color: #ffffff; /* نص أبيض */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
 }
 
 .nav a:hover {
-    color: #ffdd57; /* تغيير لون النص عند التمرير */
-}
-.space-x-nav-item-spacing {
-    margin-left: 1rem; /* أو استخدم قيمة أكبر مثل 2rem لزيادة المسافة */
-    margin-right: 1rem; /* يمكنك تغييرها كما تشاء */
-}
-nav a:hover {
-    color: #ffdd57; /* لون نص مختلف */
-    transform: scale(1.05); /* تكبير بسيط */
-    transition: all 0.3s ease;
+    color: #f5b700; /* لون ذهبي عند التمرير */
 }

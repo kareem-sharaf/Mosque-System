@@ -1,32 +1,65 @@
-{{-- resources/views/reports/edit.blade.php --}}
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <h2 class="text-xl font-semibold mb-4">Edit Report</h2>
+    <div class="container">
+        <h2 class="page-title">تعديل نشاطات الطلاب</h2>
 
-    <form action="{{ route('reports.update', $report->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+        <form action="{{ route('action.update', $report->id) }}" method="POST">
+            @csrf
+            @method('PUT')
 
-        <!-- Populate form fields with existing data, similar to create form -->
-        <div class="mb-4">
-            <label for="student_id" class="block text-gray-700">Student ID</label>
-            <input type="number" name="student_id" id="student_id" class="form-control" value="{{ $report->student_id }}" required>
-        </div>
+            @foreach ($actions as $action)
+                @php
+                    $student = $students->where('id', $action->student_id)->first();
+                @endphp
 
-        <div class="mb-4">
-            <label for="exist" class="block text-gray-700">Attendance</label>
-            <select name="exist" id="exist" class="form-control" required>
-                <option value="1" {{ $report->exist ? 'selected' : '' }}>Present</option>
-                <option value="0" {{ !$report->exist ? 'selected' : '' }}>Absent</option>
-            </select>
-        </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $student->name }}</h5>
 
-        <!-- Other fields similar to the create form, with pre-filled values -->
-        <!-- Pages, Hadiths, Clothes, Noisy -->
+                        <div class="form-group mb-2">
+                            <label>الحضور</label>
+                            <input type="checkbox" name="actions[{{ $action->id }}][exist]" value="1"
+                                {{ $action->exist ? 'checked' : '' }}>
+                        </div>
 
-        <button type="submit" class="btn-primary">Update Report</button>
-    </form>
-</div>
+                        <div class="form-group mb-2">
+                            <label>عدد الصفحات</label>
+                            <input type="number" name="actions[{{ $action->id }}][pages]" class="form-control"
+                                placeholder="أدخل عدد الصفحات" value="{{ $action->pages }}">
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label>عدد الأحاديث</label>
+                            <input type="number" name="actions[{{ $action->id }}][hadiths]" class="form-control"
+                                placeholder="أدخل عدد الأحاديث" value="{{ $action->hadiths }}">
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label>اللباس الإسلامي</label>
+                            <select name="actions[{{ $action->id }}][clothes]" class="form-control">
+                                <option value="0" {{ $action->clothes == 0 ? 'selected' : '' }}>غير ملتزم</option>
+                                <option value="1" {{ $action->clothes == 1 ? 'selected' : '' }}>ملتزم</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label>الإزعاج</label>
+                            <select name="actions[{{ $action->id }}][noisy]" class="form-control">
+                                <option value="0" {{ $action->noisy == 0 ? 'selected' : '' }}>لا</option>
+                                <option value="1" {{ $action->noisy == 1 ? 'selected' : '' }}>نعم</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label>نقاط اضافية</label>
+                            <input type="number" name="actions[{{ $action->id }}][gift]" class="form-control"
+                                placeholder="أدخل كمية النقاط الإضافية المقدمة" value="{{ $action->gift }}">
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            <button type="submit" class="btn btn-view btn-sm">تحديث البيانات</button>
+        </form>
+    </div>
 @endsection
