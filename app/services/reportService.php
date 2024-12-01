@@ -7,7 +7,7 @@ use App\Models\Subject;
 use App\Models\User;
 
 
-class  reportService
+class  ReportService
 {
 
     public function getreport($report_id)

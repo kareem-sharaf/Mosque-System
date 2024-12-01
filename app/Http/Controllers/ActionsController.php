@@ -9,7 +9,7 @@ use App\Models\Report;
 use App\Models\Student;
 
 use App\Models\Action;
-use App\Services\actionService;
+use App\services\ActionService;
 use Illuminate\Support\Facades\Auth;
 
 use App\Services\PointCalculator;
@@ -17,12 +17,12 @@ use App\Services\PointCalculator;
 
 class ActionsController extends Controller
 {
-    protected $actionService;
+    protected $ActionService;
     protected $pointCalculator;
 
-    public function __construct(actionService $actionService, PointCalculator $pointCalculator)
+    public function __construct(ActionService $ActionService, PointCalculator $pointCalculator)
     {
-        $this->actionService = $actionService;
+        $this->ActionService = $ActionService;
         $this->pointCalculator = $pointCalculator;
     }
 

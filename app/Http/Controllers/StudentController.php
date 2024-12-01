@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Http\Requests\StudentRequest;
 use Illuminate\Http\Request;
-use App\Services\studentService;
+use App\services\StudentService;
 use App\Http\Middleware\CustomAuthMiddleware;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +15,11 @@ class StudentController extends Controller
 
 
 
-    protected $studentService;
+    protected $StudentService;
 
-    public function __construct(StudentService $studentService)
+    public function __construct(StudentService $StudentService)
     {
-        $this->studentService = $studentService;
+        $this->StudentService = $StudentService;
     }
 
 
@@ -76,7 +76,7 @@ class StudentController extends Controller
 
     public function edit($student_id)
     {
-        $student = $this->studentService->getstudent($student_id);
+        $student = $this->StudentService->getstudent($student_id);
 
         if (!$student) {
             return redirect()->route('students.index')->with('message', 'Student not found.');
@@ -89,7 +89,7 @@ class StudentController extends Controller
     public function update(StudentRequest $request, $student_id)
     {
         $data = $request->validated();
-        $student = $this->studentService->getstudent($student_id);
+        $student = $this->StudentService->getstudent($student_id);
         if (!$student) {
             return redirect()->route('students.index')->with('error', 'Student does not exist!');
         }
@@ -125,7 +125,7 @@ class StudentController extends Controller
             ]);
         }
 
-        $students = $this->studentService->search($name);
+        $students = $this->StudentService->search($name);
 
 
         return response()->json([
@@ -142,7 +142,7 @@ class StudentController extends Controller
 
     public function showOne($student_id)
     {
-        $student = $this->studentService->getStudent($student_id);
+        $student = $this->StudentService->getStudent($student_id);
 
         if (!$student) {
             return redirect()->route('students.index')->with('error', 'Student not found');

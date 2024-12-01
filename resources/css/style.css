@@ -1,0 +1,77 @@
+/* تنسيق الخلفية */
+body {
+    background-color: #f3f4f6;
+    font-family: 'Roboto', sans-serif;
+    direction: rtl; /* للغة العربية */
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+/* الحاوية الرئيسية */
+.login-container {
+    position: relative;
+    padding-top: 4rem;
+}
+
+/* البطاقة */
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* عنوان البطاقة */
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* أزرار خارج البطاقة */
+.outside-buttons {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.outside-buttons .btn {
+    padding: 0.5rem 1rem;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.outside-buttons .btn:hover {
+    background-color: #4338ca;
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #4338ca;
+}

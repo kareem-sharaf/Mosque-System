@@ -1,26 +1,88 @@
 /* Container Styling */
 .container {
-    max-width: 80%;
-    padding: 200px;
-    /* background-color: #877373; لون خلفية أفتح قليلاً من الأحمر الداكن */
-    color: #050505; /* نص أبيض */
+    max-width: 100%; /* تغطية العرض بالكامل */
+    padding: 1rem; /* مسافات داخلية */
+    margin: 0 auto; /* محاذاة في المنتصف */
 }
 
 /* Table Styling */
 .table {
-    background-color: #fcfbfa; /* نفس لون النافبار */
-    color: #070707; /* نص أبيض */
-    border: 1px solid #d14949; /* حدود بلون أفتح */
+    width: 100%; /* عرض الجدول بالكامل */
+    table-layout: fixed; /* توزيع متساوٍ للأعمدة */
+    border-collapse: collapse; /* إزالة الفراغ بين حدود الخلايا */
+    background-color: #fcfbfa; /* لون خلفية الجدول */
+    color: #070707; /* لون النص */
+    border: 1px solid #d14949; /* حدود الجدول */
 }
-.table tbody tr td {
-    color: #070707; /* اللون الأبيض للنص */
+/* تعديلات الجدول */
+.table th, .table td {
+    white-space: normal; /* السماح للنصوص بالالتفاف */
+    word-wrap: break-word; /* كسر النصوص الطويلة */
+    text-align: center; /* محاذاة النصوص إلى المنتصف */
+    padding: 0.5rem; /* مسافات داخلية مريحة */
+    font-size: 0.9rem; /* تصغير النص لتوفير مساحة */
 }
-.white-text {
-    color: #0d0d0d;
+
+.table {
+    table-layout: auto; /* جعل الأعمدة تتكيف مع المحتوى */
+    width: 100%; /* عرض الجدول بالكامل */
 }
-.page-title {
-    color: #0a0a0a; /* لون النص أبيض */
+
+.table th {
+    font-size: 1rem; /* حجم خط مناسب للرؤوس */
 }
+
+/* استجابة أفضل للأجهزة المحمولة */
+@media (max-width: 576px) {
+    .table th, .table td {
+        font-size: 0.8rem; /* تقليل حجم الخط على الشاشات الصغيرة */
+        padding: 0.4rem; /* تقليل المسافات الداخلية */
+    }
+}
+
+
+/* Navbar Styling */
+.nav {
+    background-color: #8c0303; /* خلفية حمراء داكنة */
+    color: #ffffff; /* نص أبيض */
+    display: flex; /* توزيع العناصر أفقياً */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* محاذاة العناصر في المنتصف */
+    padding: 0 1rem; /* مسافات داخلية */
+    height: 4rem; /* ارتفاع النافبار */
+    width: 100%; /* تغطية عرض الشاشة */
+    margin: 0; /* إزالة أي مسافات خارجية */
+    border-bottom: 1px solid #6e0202; /* حدود سفلية */
+    position: fixed; /* تثبيت النافبار في الأعلى */
+    top: 0;
+    z-index: 1000; /* وضعية فوق العناصر الأخرى */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+.nav a {
+    color: #ffffff; /* نص أبيض */
+    text-decoration: none; /* إزالة التسطير */
+    padding: 0.5rem 1rem; /* مسافات داخلية للرابط */
+    transition: color 0.3s ease-in-out; /* تأثير على اللون */
+}
+
+.nav a:hover {
+    color: #f5b700; /* لون ذهبي عند التمرير */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap; /* يلتف عند نقص المساحة */
+        padding: 0.5rem 1rem;
+    }
+
+    .nav a {
+        padding: 0.3rem 0.5rem; /* تصغير الحواف */
+        font-size: 0.9rem; /* تقليل حجم الخط */
+    }
+}
+
 /* Button Styling */
 .btn-primary {
     background-color: #b33b3b; /* لون أحمر متوسط */
@@ -43,9 +105,9 @@
     background-color: #8c0303; /* لون الخلفية */
     color: #ffffff; /* لون النص */
     border: none; /* إزالة الحدود */
-    border-radius: 5px; /* زوايا دائرية */
-    padding: 5px 10px; /* مسافات داخلية */
-    font-weight: bold; /* جعل النص عريضًا */
+    border-radius: 3px; /* زوايا أقل دائرية */
+    padding: 0.3rem 0.8rem; /* تصغير المسافات الداخلية */
+    font-size: 0.85rem; /* تقليل حجم النص */
     transition: all 0.3s ease; /* تأثير الانتقال */
 }
 
@@ -54,8 +116,17 @@
     color: #f8f9fa; /* لون النص عند التمرير */
     transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
 }
+@media (max-width: 576px) {
+    .btn-primary,
+    .btn-warning,
+    .btn-danger,
+    .btn-view {
+        padding: 0.2rem 0.6rem; /* تقليل أكبر للمسافات الداخلية */
+        font-size: 0.75rem; /* حجم أصغر للنص */
+    }
+}
 
-/* Alert */
+/* Alert Styling */
 .alert {
     border-radius: 5px;
     padding: 10px 20px;
@@ -65,25 +136,83 @@
     border: 1px solid #b33b3b; /* حدود بلون أحمر متوسط */
 }
 
-/* Navbar Styling */
-.nav {
-    background-color: #8c0303; /* لون خلفية أحمر داكن */
-    color: #ffffff; /* نص أبيض */
-    padding: 0 20rem;
+
+/* الحاوية العامة لتسجيل الدخول */
+.login-container {
+    margin-top: 5rem; /* مسافة من أعلى الصفحة */
+    padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    height: 4rem;
-    border-bottom: 1px solid #6e0202; /* حدود متناسقة أغمق */
+    gap: 1.5rem;
 }
 
-.nav a {
-    color: #ffffff; /* نص أبيض */
-    text-decoration: none;
+/* البطاقة الرئيسية */
+.login-card {
+    background-color: #fcfbfa; /* لون خلفية ناعم */
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px; /* حجم ثابت للبطاقة */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+/* عنوان البطاقة */
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #8c0303; /* لون متناسق مع الأزرار */
+}
+
+/* الأزرار الخارجية */
+.outside-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* الحاوية الأساسية */
+.min-h-screen {
+    background-color: #f9fafb; /* خلفية فاتحة */
+}
+
+/* الحاوية الداخلية */
+.sm\:max-w-md {
+    border-radius: 10px; /* زوايا مستديرة */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    padding: 1.5rem; /* مسافات داخلية */
+}
+
+/* الأزرار */
+.btn-primary {
+    background-color: #8c0303;
+    color: #ffffff;
     padding: 0.5rem 1rem;
-    transition: color 0.3s;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav a:hover {
-    color: #f5b700; /* لون ذهبي عند التمرير */
+.btn-primary:hover {
+    background-color: #b33b3b;
+    transform: scale(1.05);
 }
+
+.btn-warning {
+    background-color: #f5b700;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-warning:hover {
+    background-color: #d4a100;
+    transform: scale(1.05);
+}
+
+

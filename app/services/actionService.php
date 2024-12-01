@@ -7,7 +7,7 @@ use App\Models\Subject;
 use App\Models\User;
 
 
-class  actionService
+class  ActionService
 {
 
 

@@ -6,18 +6,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ReportRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Report;
-use App\Services\reportService;
+use App\services\ReportService;
 
 class ReportController extends Controller
 {
 
 
 
-    protected $reportService;
+    protected $ReportService;
 
-    public function __construct(reportService $reportService)
+    public function __construct(ReportService $ReportService)
     {
-        $this->reportService = $reportService;
+        $this->ReportService = $ReportService;
     }
 
 
@@ -30,7 +30,7 @@ class ReportController extends Controller
 
     // public function showOne($report_id)
     // {
-    //     $report = $this->reportService->getreport($report_id);
+    //     $report = $this->ReportService->getreport($report_id);
 
     //     if (!$report) {
     //         return redirect()->route('reports.index')->with('error', 'report not found');
@@ -82,7 +82,7 @@ class ReportController extends Controller
 
     // public function edit($report_id)
     // {
-    //     $report = $this->reportService->getreport($report_id);
+    //     $report = $this->ReportService->getreport($report_id);
 
     //     if (!$report) {
     //         return redirect()->route('reports.index')->with('message', 'report not found.');
@@ -95,7 +95,7 @@ class ReportController extends Controller
     // public function update(reportRequest $request, $report_id)
     // {
     //     $data = $request->validated();
-    //     $report = $this->reportService->getreport($report_id);
+    //     $report = $this->ReportService->getreport($report_id);
     //     if (!$report) {
     //         return redirect()->route('reports.index')->with('error', 'report does not exist!');
     //     }

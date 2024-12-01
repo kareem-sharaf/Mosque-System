@@ -7,7 +7,7 @@ use App\Models\Subject;
 use App\Models\User;
 
 
-class  studentService
+class  StudentService
 {
 
     public function getstudent($student_id)
